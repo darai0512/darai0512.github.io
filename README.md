@@ -27,4 +27,4 @@ $vi index.html
 <script type="text/template"></script>
 </section>
 ```
-<https://pages.github.com/darai/study/index.html#/>で確認  
+<http://darai0512.github.io/>で確認  
