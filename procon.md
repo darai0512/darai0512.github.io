@@ -200,13 +200,14 @@ for j 1 to n-1
     max = (maxとRj - Ri の大きい方)
 
 # O(n)で終わる例
-min = R0
+max = (十分小さな値)
+min = (最初の入力)
 for j 1 to n-1
   max = (maxとRj - min の大きい方)
   min = (minとRj のうち小さい方)
 ```
 
-処理時間だけでなくメモリ消費も軽減！
+処理時間だけでなく配列も不要なのでメモリ消費も軽減！
 
 ---
 
@@ -216,25 +217,63 @@ for j 1 to n-1
 #include <iostream>
 #include <algorithm>
 using namespace std;
-static const int MAX = 2000000;
+static const int N_MAX = 2000000;
 
 int main()
 {
-    int R;
-    char s[INTMAX - 1];
-    unsigned long long sum_real = 0;
-    unsigned long long sum_ideal = 15; /* ??=0からINTMAXの和 */
-    fp = fopen("q1.txt", "r");
-    while (fgets(s, INTMAX - 1, fp) != NULL) {
-      s[strlen(s) - 1] = '\0';
-      sum_real += atoi( s );
+    int R[N_MAX], n;
+    cin >> n;
+    for ( int i = 0; i < n; i++ ) cin >> R[i];
+    
+    int max_profit = -1000000;
+    int min_r = R[0];
+    
+    for ( int i = 0; i < n; i++ ) {
+        max_profit = max(max_profit, R[i] - min_r);
+        min_r = min(min_r, R[i]);
     }
-    fclose(fp);
-    /* unsigned long long から int への変換 */
-    printf("ans=%d\n", sum_ideal - sum_real);
+    cout << max_profit << endl;
+    
     return 0;
 }
 ```
 
 ---
 
+### Q4(ソート)
+
+- バブルソート（順番が逆になっている隣接要素がなくなるまで次の処理を繰り返す）
+- 挿入ソート（ソート済みの部分を1つずつ増やしていく）
+- 選択的ソート（未ソートの部分から最小の要素を特定し前方へ配置していく）
+- シェルソート（一定の間隔gだけ離れた要素のみを対象とした挿入ソートを繰り返す）
+- 二分木（既にソート済みなら中央から2分して位置を特定 ex, B-tree-index）
+
+---
+
+### Q5(Stack)
+
+- 一時的にデータを退避したいときに用いる。後入れ先出し。
+
+---
+
+### Q5(Queue)
+
+- ラウンドロビンスケジューリング：CPUがプロセスを順に処理
+- 名前Niと処理時間TiをもつN個のプロセスが順番に一列に並んでいる。  
+各プロセスは最大q msだけ処理し、完了しなければそのプロセスは列の最後尾へ移動し次のプロセスへ。  
+
+---
+
+#### Q5 ex
+
+```
+q=100 
+step0: A(150) - B(80) - C(200) - D(200)
+step1: B(80) - C(200) - D(200) - A(50)
+```
+
+メモリ制限: 65,536KB  
+時間制限: 1sec  
+制約: 2 ≦ n ≦ 200,000 ; 1 ≦ Rt ≦ 10^9  
+
+---
