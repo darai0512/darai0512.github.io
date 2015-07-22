@@ -191,3 +191,20 @@ n=3
 
 ---
 
+#### A3の考え方
+
+```
+# 単純だがO(n^2)かかってしまう例
+for j 1 to n-1
+  for i 1 to j-1
+    max = (maxとRj - Ri の大きい方)
+
+# O(n)で終わる例
+min = R0
+for j 1 to n-1
+  max = (maxとRj - min の大きい方)
+  min = (minとRj のうち小さい方)
+```
+
+---
+
