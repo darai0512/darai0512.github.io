@@ -79,20 +79,24 @@ Nを調べなさい。
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
+
 int main(void)
 {
     FILE *fp;
-    char s[INTMAX - 1];
-    unsigned long long sum_real = 0;
-    unsigned long long sum_ideal = 15; /* ??=0からINTMAXの和 */
+    char s[INT_MAX];
+    int sum_mod = 0; /* 真田さんのアイデアでunsigned long long型を使用せずにできそう */
+    int sum_ideal_mod = ((0 + INT_MAX) * (INT_MAX + 1) / 2) % INTMAX;
     fp = fopen("q1.txt", "r");
-    while (fgets(s, INTMAX - 1, fp) != NULL) {
+    while (fgets(s, INT_MAX - 1, fp) != NULL) {
       s[strlen(s) - 1] = '\0';
-      sum_real += atoi( s );
+      sum_mod += atoi( s );
+      sum_mod = sum_mod % INT_MAX;
     }
     fclose(fp);
-    /* unsigned long long から int への変換 */
-    printf("ans=%d\n", sum_ideal - sum_real);
+    ans = abs(sum_ideal_mod - sum_mod);
+    if (ans == 0) { ans = INT_MAX; }
+    printf("ans=%d\n", ans);
     return 0;
 }
 ```
@@ -128,17 +132,16 @@ int main(void)
 
 ### Q1改
 
-- 0 から INTMAX の数字が**何度か重複して**Randomに並んでいる。しかし実際にはある整数Nが抜けている(総数はINTMAX - 1)。  
+- 0 から INTMAX の数字が**何度か重複して**Randomに並んでいる。しかし実際にはある整数Nが抜けている(総数は重複のため不明)。  
 Nを調べなさい。   
 
-メモリ制限: 1GB  
-時間制限: なし 
+→解2でならできる！
 
 ---
 
 ### Q2
 
-- 0 から INTMAX の数字が**何度か重複して**Randomに並んでいる。しかし実際にはある整数Nが抜けている(総数はINTMAX - 1)。  
+- 0 から INTMAX の数字が**何度か重複して**Randomに並んでいる。しかし実際にはある整数Nが抜けている。  
 Nを調べなさい。   
 
 メモリ制限: 1MB  
@@ -240,7 +243,7 @@ int main()
 
 ---
 
-### Q4(ソート)
+### 閑話休題:ソート
 
 - バブルソート（順番が逆になっている隣接要素がなくなるまで次の処理を繰り返す）
 - 挿入ソート（ソート済みの部分を1つずつ増やしていく）
@@ -250,13 +253,7 @@ int main()
 
 ---
 
-### Q5(Stack)
-
-- 一時的にデータを退避したいときに用いる。後入れ先出し。
-
----
-
-### Q5(Queue)
+#### Q4(Queue)
 
 - ラウンドロビンスケジューリング：CPUがプロセスを順に処理
 - 名前Niと処理時間TiをもつN個のプロセスが順番に一列に並んでいる。各プロセスは最大q msだけ処理し、完了しなければそのプロセスは列の最後尾へ移動し次のプロセスへ。  
@@ -268,7 +265,7 @@ int main()
 
 ---
 
-#### Q5 ex
+#### Q4 ex
 
 ```
 q=100 
@@ -280,7 +277,7 @@ t=280: D(200) - A(50) - C(100)
 
 ---
 
-#### Q5の入出力例
+#### Q4入出力例
 
 ```
 入力例1
@@ -290,6 +287,7 @@ bb 80
 cc 200
 dd 350
 ee 20
+
 出力例1
 bb 180
 ee 400
@@ -299,3 +297,7 @@ dd 800
 ```
 
 ---
+
+#### Q4解
+
+来週
