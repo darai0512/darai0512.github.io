@@ -78,7 +78,7 @@ Nを調べなさい。
 ```
 #include <stdio.h>
 #include <stdlib.h>
-#include  <string.h>
+#include <string.h>
 int main(void)
 {
     FILE *fp;
@@ -213,5 +213,28 @@ for j 1 to n-1
 #### A3解
 
 ```
+#include <iostream>
+#include <algorithm>
+using namespace std;
+static const int MAX = 2000000;
 
+int main()
+{
+    int R;
+    char s[INTMAX - 1];
+    unsigned long long sum_real = 0;
+    unsigned long long sum_ideal = 15; /* ??=0からINTMAXの和 */
+    fp = fopen("q1.txt", "r");
+    while (fgets(s, INTMAX - 1, fp) != NULL) {
+      s[strlen(s) - 1] = '\0';
+      sum_real += atoi( s );
+    }
+    fclose(fp);
+    /* unsigned long long から int への変換 */
+    printf("ans=%d\n", sum_ideal - sum_real);
+    return 0;
+}
 ```
+
+---
+
