@@ -72,25 +72,59 @@ exの解3のように一つずつ調べていく方法だとメモリ制限に�
 
 ### A1
 
-1. for文の中で、Sum(合計)だけを保持する  
+1. 合計値は不変なので、ループの中でSum(合計)だけを保持する  
 
-    #include <stdio.h>
-    #include <stdlib.h>
-    int main(void)
-    {
-	    FILE *fp;
-	    char s[INTMAX - 1];
-	    unsigned long long sum_real;
-	    unsigned long long sum_ideal = ??; /* ??=0からINTMAXの和 */
-	    fp = fopen("q1.txt", "r");
-      while (fgets(s, INTMAX - 1, fp) != NULL) {
-        sum_real += atoi( s );
-      }
-      fclose(fp);
-      printf("ans=%d", sum_ideal - sum_real);
-      return 0;
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include  <string.h>
+int main(void)
+{
+    FILE *fp;
+    char s[INTMAX - 1];
+    unsigned long long sum_real = 0;
+    unsigned long long sum_ideal = 15; /* ??=0からINTMAXの和 */
+    fp = fopen("q1.txt", "r");
+    while (fgets(s, INTMAX - 1, fp) != NULL) {
+      s[strlen(s) - 1] = '\0';
+      sum_real += atoi( s );
     }
+    fclose(fp);
+    /* unsigned long long から int への変換 */
+    printf("ans=%d\n", sum_ideal - sum_real);
+    return 0;
+}
+```
 
 2. 数字一つを表す方法を、int(4byte)より小さくする
+
+---
+
+## ビット配列
+
+(2^31-1) * 1bit / 1024 / 1024 = 1024 * 8 = 0.25Gbyte  
+
+例）0−7の数字だったら、以下のように8桁のビット列を定義する。  
+
+```
+0 = 00000000
+1 = 00000001
+2 = 00000010
+8 = 10000000
+```
+
+---
+
+## Q1解2
+
+INTMAX = 8とする。  
+特定の値がきたら、そのビット番目の値に1が立っているビット列とORを取る。  
+
+```
+・3がきたら
+00000000 OR 00000100 = 00000100
+・続いて5がきたら
+00000100 OR 00100000 = 00100100
+```
 
 ---
