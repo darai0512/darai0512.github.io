@@ -259,7 +259,7 @@ int main()
 
 - 後置記法、日本語記法（動詞が最後にくるため）とも呼ばれる
 - Stack（＝積み重ね）は後に入れたものほど先に取り出される(last-in first-out)
-- コンパイラでは演算記号をStackして（優先度比較）、後置記法の式を作成
+- コンパイラではOperationをStack（優先度を比較）して後置記法化し処理
 
 ```
 a * b + c * d => ab*cd*+  
@@ -283,9 +283,24 @@ void ex() {
 ```
 
 Stack: = → =* → =+ → =+/  
-出力: abc e3 2.56 * abc e3 / + =
+出力: abc e3 2.56 * abc e3 / + =  
 
 ---
+
+process | address or priority | variable
+:--- | :--- | :---
+LoadAddr | 100 | abc
+LoadValue | 104 | e3
+LoadValue | 200 | 2.56
+Operation | 5 | *
+LoadValue | 100 | abc
+LoadValue | 104 | e3
+Operation | 6 | /
+Operation | 3 | +
+Operation | 1 | =
+
+---
+
 #### Q4(Stack)
 
 - ラウンドロビンスケジューリング：CPUがプロセスを順に処理
