@@ -1,17 +1,24 @@
 <!-- .slide: data-background-transition: "slide" -->
 
-## Erlang 入門
+## Erlang
 
 2015/05/18
 
-darai
+Daiki Arai
 
 ---
 
 ### 目的
 
-- Erlang を使ってみる
+- try to use Erlang  
 
+---
+
+## What can we call Erlang?
+
+- アーラン  
+- エアラング in English  
+ 
 ---
 
 ## What Erlang ?
@@ -21,8 +28,9 @@ darai
 
 ---
 
-- 1998年にEricsson社により開発され、オープンソースとして公開
-- 電話会社が開発したため、大量の並列処理・障害への耐性が強い
+- 1998年にスウェーデンのEricsson社により開発されたOSS
+- ERicsson LANGuage
+- 電話会社が開発したため、大量のコネクションの扱い(並列処理)・障害耐性に強い
 
 ---
 
