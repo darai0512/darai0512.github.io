@@ -270,9 +270,9 @@ list | Doubly Linked List | 追加・削除が高速だがアクセスは順番
 
 ---
 
-### Stack (=積み重ね)
+#### Stack (=積み重ね)
 
-<img src="./image/stack.png" width="80" height="100"/>
+<img src="./image/stack.png" width="80" height="160"/>
 
 STLメンバ関数 | 機能 | 計算量
 --- | --- | ---  
@@ -423,7 +423,7 @@ begin() | 先頭のイテレータ返却 | Ο(1)
 end() | 末尾のイテレータ返却 | Ο(1) 
 push_front/back(x) | 要素x追加 | Ο(1) 
 pop_front/back() | 要素削除 | Ο(1) 
-insert(p,x) | pの位置に要素xを追加 | Ο(n/1) 
-erase(p) | pの位置に要素を削除 | Ο(n/1)
-clear() | 全要素削除 | Ο(n/1) 
+insert(p,x) | pの位置に要素xを追加 | Ο(n)/Ο(1) 
+erase(p) | pの位置に要素を削除 | Ο(n)/Ο(1)
+clear() | 全要素削除 | Ο(n)/Ο(1)
 
