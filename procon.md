@@ -272,7 +272,7 @@ list | Doubly Linked List | 追加・削除が高速だがアクセスは順番
 
 ### Stack (=積み重ね)
 
-<img src="./image/stack.png" width="150" height="150"/>
+<img src="./image/stack.png" width="80" height="100"/>
 
 STLメンバ関数 | 機能 | 計算量
 --- | --- | ---  
@@ -351,7 +351,7 @@ Operation | 1 | =
 
 ### Queue (=待ち行列)
 
-<img src="./image/queue.png" width="150" height="150"/>
+<img src="./image/queue.png" width="150" height="50"/>
 
 STLメンバ関数 | 機能 | 計算量
 --- | --- | ---  
@@ -421,11 +421,9 @@ STLメンバ関数 | 機能 | 計算量
 size() | 要素数返却 | Ο(1) 
 begin() | 先頭のイテレータ返却 | Ο(1) 
 end() | 末尾のイテレータ返却 | Ο(1) 
-push_front(x) | 先頭に要素x追加(list only) | Ο(1) 
-push_back(x) | 最後尾に要素x追加( | Ο(1) 
-pop_front() | 先頭要素削除(list only) | Ο(1) 
-pop_back() | 最終要素削除 | Ο(1) 
-insert(p,x) | pの位置に要素xを追加 | Ο(n) vs Ο(1) 
-erase(p) | pの位置に要素を削除 | Ο(n) vs Ο(1)
-clear() | 全要素削除 | Ο(n) vs Ο(1) 
+push_front/back(x) | 要素x追加 | Ο(1) 
+pop_front/back() | 要素削除 | Ο(1) 
+insert(p,x) | pの位置に要素xを追加 | Ο(n/1) 
+erase(p) | pの位置に要素を削除 | Ο(n/1)
+clear() | 全要素削除 | Ο(n/1) 
 
