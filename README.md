@@ -1,5 +1,7 @@
-reveal.jsを使ってみた
-==============
+## github pages
+http://qiita.com/budougumi0617/items/221bb946d1c90d6769e9
+
+## reveal.js
 
 ```bash
 $wget https://github.com/hakimel/reveal.js/archive/3.1.0.tar.gz
