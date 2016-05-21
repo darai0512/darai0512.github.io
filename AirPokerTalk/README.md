@@ -4,7 +4,10 @@
 
 2016/05
 
-新井 大輝 @darai0512
+新井 大輝 
+
+@darai0512
+
 twitter/github/qiita
 
 ---
@@ -22,16 +25,17 @@ twitter/github/qiita
 
 ---
 
-### 某漫画の作中ゲームを再現してみた (ネタバレ注意)
+### 再現してみた某漫画
 
 - <p class="fragment">嘘喰い  
 <img src="http://mym.corp.yahoo.co.jp/paster/ce7ff90f7c58256702fc.png" width="300" height="450"/>
 </p>
-- [Demo(β版)](http://darai0512.github.io/AirPoker/index.html)
 
-<aside class="notes">
-デモを通してルール紹介
-</aside>
+---
+
+[Demo(β版)](http://darai0512.github.io/AirPoker/index.html)
+
+※ネタバレ注意
 
 ---
 
@@ -47,17 +51,14 @@ twitter/github/qiita
 
 ### Motivation
 
-- GithubにPortfolioないのが許されるのって小学生までだよね
+- Github pagesでサーバー代タダでPortfolio公開 (お買い得ぅ!!)
   - [bmsjs @bokuweb](http://bokuweb.github.io/bmsjs/) 
-  - [ika-maker @leader22](http://ikasu.lealog.net/)
   - [React-MineSweeper @shibe97](http://shibe97.github.io/mineSweeper/)
-- Github pagesでサーバー代タダ (お買い得ぅ!!)
 - 最近のFEの盛り上がりに煽られて
 
 <aside class="notes">
 小学生のプログラミング授業
 サムライト(全員Lisper)のbokuwebさんの音ゲー,react/Mithril.js/camvasの速度比較と60fps(http://dic.nicovideo.jp/a/60fps)
-leader22さんのはRedux,4日で作成
 弊社MSCデザイナーの柴田さんは今年のdevsummit speaker
 </aside>
 
