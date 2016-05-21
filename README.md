@@ -1,6 +1,6 @@
 ## github pages
 
-In order to make your page public, it is generally easy the way to make '<USER_NAME>.github.io' repository.  
+In order to make your page public, it is generally easy the way to make 'USER_NAME.github.io' repository.  
 Or, you can use 'gh-pages' branch.  
 
 ```bash
@@ -58,4 +58,4 @@ $bundle exec markdown2impress README.md
 ## access
 
 adds the following URL to directory name  
-http://darai0512.github.io/<DIR_NAME>/
+http://darai0512.github.io/DIR_NAME/
